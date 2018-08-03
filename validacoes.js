@@ -119,6 +119,10 @@ $(document).ready(function(){
      */
     function validarDocumento(documento) {
         var validacao = true;
+
+        //deixar somente números
+        documento = documento.replace(/[^\d]+/g,'');
+
         if(documento.length == 11) {
             validacao = validarCPF(documento);
         } else if (documento.length == 14) {
